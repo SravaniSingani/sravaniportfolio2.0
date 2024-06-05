@@ -48,8 +48,28 @@ document.addEventListener("click", (e) => {
       document.body.classList.add("hide-scrolling");
     }
     setTimeout(() => {
-      document.querySelector("section.active").classList.remove("active", "fade-out");
-      document.querySelector(e.target.hash).classList.add("active");
+      //document.querySelectorAll("section.active").classList.remove("active", "fade-out");
+      // document.querySelectorAll("section.active").forEach((section) => {
+      //   section.classList.remove("active", "fade-out");
+      // });
+
+      if (e.target.hash === "#home") {
+        document.querySelectorAll("section").forEach((section) => {
+          section.classList.add("active");
+          section.classList.remove("fade-out");
+        });
+      } else {
+        // Remove active and fade-out classes from all sections
+        document.querySelectorAll("section.active").forEach((section) => {
+          section.classList.remove("active", "fade-out");
+        });
+
+        // Activate the target section
+        document.querySelector(e.target.hash).classList.add("active");
+      }
+
+      
+      //document.querySelector(e.target.hash).classList.add("active");
       window.scrollTo(0,0);
       document.body.classList.remove("hide-scrolling");
       navToggle.classList.remove("hide");

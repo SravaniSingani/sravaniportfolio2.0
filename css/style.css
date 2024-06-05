@@ -373,6 +373,7 @@ button{
     justify-content: space-between;
     padding: 15px 20px;
     background-color: var(--bg-color-2);
+    border-bottom: 1px solid var(--ash-gray);
 
 }
 
@@ -763,6 +764,10 @@ button{
 }
 
 /* footer */
+.footer{
+    padding-top: 10px;
+}
+
 .footer p{
     text-align: center;
 }
